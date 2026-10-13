@@ -115,8 +115,8 @@ section h2{
 }
 
 .boton:hover,button:hover{
-    background-color: greenyellow;
-    color: blue;
+    background-color: rgb(251, 117, 0);
+    color: rgb(0, 0, 10);
 }
 
 
@@ -181,4 +181,132 @@ section h2{
 .proyecto a{
     color: rgb(141, 159, 241);
     font-weight: bold;
+}
+
+/* inicio admin */
+.seccion-admin {
+    padding: 60px 40px;
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuadro */
+.contenedor-cuadro-mensajes {
+    background-color: #575757;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 950px;
+}
+
+/* Título dentro del cuadro */
+.contenedor-cuadro-mensajes h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+    color: #f3f1f1;
+}
+
+/* Estilo de la tabla  */
+.tabla-mensajes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-mensajes th {
+    background-color: #e45f00;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-size: 16px;
+}
+/* Letra y el fondo */
+.tabla-mensajes td {
+    padding: 14px;
+    border-bottom: 1px solid #080808;
+    color: #f4f2f2;
+    font-size: 15px;
+}
+/* Cuando pasa el mouse */
+.tabla-mensajes tr:hover {
+    background-color: #686868;
+}
+
+/* Iconos o enlaces de opciones dentro de la tabla */
+.tabla-mensajes td a {
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.tabla-mensajes td a:hover {
+    transform: scale(1.2);
+}
+
+/* inicio edicion */
+
+/* Cuadro contenedor del formulario de edición */
+.contenedor-cuadro-formulario {
+    background-color: #686868;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 700px;
+}
+
+/* titulo h2 edicion */
+.contenedor-cuadro-formulario h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+    color: #fe6200;
+}
+
+/* Distancia cuadros */
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ff7700;
+}
+
+/* Texto dentro del cuadro y el cuadro */
+.grupo-formulario input,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+    color: #040404;
+}
+
+/* Cambia color cuando entramos al cuadro de texto  */
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: rgb(254, 127, 0);
+}
+
+/* Alineamos para el boton que ya hicimos la anterior clase */
+.contenedor-cuadro-formulario .boton {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
