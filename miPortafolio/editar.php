@@ -16,7 +16,7 @@
     <!-- Barra de navegación con iconos de regreso funcionales -->
     <nav>
         <a href="admin.php" title="Volver a Admin">↩️ Admin</a> 
-        <a href="index.html" title="Volver al Portafolio">🏠 Inicio</a> 
+        <a href="index.php" title="Volver al Portafolio">🏠 Inicio</a> 
     </nav>
 
     <!-- Principal -->

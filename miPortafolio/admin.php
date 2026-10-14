@@ -16,7 +16,7 @@
 
     <!-- Barra de navegacion / Icono de regreso -->
     <nav>
-        <a href="index.html">🏠</a> 
+        <a href="index.php">🏠</a> 
     </nav>
 
     <!-- Principal -->
