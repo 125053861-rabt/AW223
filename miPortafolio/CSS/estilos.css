@@ -41,12 +41,12 @@ nav{
     justify-content: center;
     gap:25px;
     padding: 20px;
-    background-color: rgb(209, 146, 0);
-    border-bottom: 1px solid #915a01;
+    background-color: rgb(246, 94, 0);
+    border-bottom: 1px solid #bd6b00;
 }
 
 nav a{
-    color: rgb(119, 173, 200);
+    color: rgb(48, 201, 236);
     text-decoration: none;
     font-weight: bold;
 }
@@ -126,13 +126,13 @@ section h2{
     display: flex;
     align-items: center;
     gap: 40px;
-    max-width: 80px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .sobre-mi-contenido img{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -309,4 +309,59 @@ section h2{
     width: 100%;
     text-align: center;
     margin-top: 10px;
+}
+/* Contactame */
+#contacto {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: inherit;
+}
+
+/* Formulario */
+#formulario {
+    width: 100%;
+}
+
+/* Campos de entrada */
+.campo {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #ffffff;
 }

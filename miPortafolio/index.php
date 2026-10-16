@@ -37,9 +37,8 @@
         <section id="sobre-mi">
             <h2>Sobre mi</h2>
             <div class="sobre-mi-contenido">
-                <img src="" alt="Foto de perfil">
+                <img src="./CSS/imagenes/yo.jpeg" alt="Foto de perfil">
                 <div>
-                    <p>Algo sobre mi imagen</p>
                     <p>En esta página estoy aprendiendo sobre HTML y CSS</p>
                 </div>
             </div>
@@ -79,10 +78,10 @@
         </section>
 
         <!-- Contacto -->
-        <section id="contacto">
-            <h2>Contáctame</h2>
-            <form id="formulario" action="guardar_mensaje.php" method="post">
-                <div class="campo">
+         <section id="contacto" class="seccion-contacto">
+             <h2>Contáctame</h2>
+             <form id="formulario" action="guardar_mensaje.php" method="post">
+                 <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input 
                         type="text"
@@ -108,7 +107,6 @@
                         rows="5"
                         placeholder="Escribe tu mensaje"></textarea>
                 </div>
-
                 <button type="submit">
                     Enviar mensaje
                 </button>
