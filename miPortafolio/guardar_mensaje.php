@@ -13,9 +13,9 @@ $stmt = $conexion->prepare($sqlInsert);
 $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 
 if ($stmt->execute()) {
-    echo "Mensaje guardado yupiii";
+    header("Location:index.php?estadophp=exito");
 } else {
-    echo "Fallo tu coso: ";
+    header("Location:index.php?estadophp=fallo");
 }
 $stmt->close();
 $conexion->close();

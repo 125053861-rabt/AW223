@@ -29,37 +29,30 @@
                 <table class="tabla-mensajes">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Mensaje</th>
+                            <th>Fecha</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- td = table data 
-                        tr = table row 
-                        tbody inicia el cuerpo de la tabla :) -->
-                        <tr>
-                            <td>1</td>
-                            <td>Ana</td>
-                            <td>ana@example.com</td>
-                            <td>Hola, me interesa tu portafolio.</td>
-                            <td>
-                                <a href="editar.php?id=1" title="Editar">✏️</a>
-                                <a href="borrar.php?id=1" title="Borrar">🗑️</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>José</td>
-                            <td>jose@example.com</td>
-                            <td>Quisiera más información sobre tus proyectos.</td>
-                            <td>
-                                <a href="editar.php?id=2" title="Editar">✏️</a>
-                                <a href="borrar.php?id=2" title="Borrar">🗑️</a>
-                            </td>
-                        </tr>
+                        <?php
+                          require "consulta_mensajes.php";
+                          $rsMensaje = consultMensajes();
+
+                          while ($arrMensajes = mysqli_fetch_array($rsMensaje)) {
+                              echo "<tr>
+                          <td>" . $arrMensajes['nombre'] . "</td>
+                          <td>" . $arrMensajes['correo'] . "</td>
+                          <td>" . $arrMensajes['mensaje'] . "</td>
+                          <td>" . $arrMensajes['timeStaps'] . "</td>
+                          <td>
+                          <a href='editar.php?id=" . $arrMensajes['ID'] . "' title='Editar'>✏️</a>
+                          <a href='borrar.php?id=" . $arrMensajes['ID'] . "' title='Borrar'>🗑️</a>
+                        </td>
+                    </tr>";
+                    }?>
                     </tbody>
                 </table>
             </div>
