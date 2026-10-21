@@ -1,3 +1,16 @@
+<?php
+require_once("consulta_mensajes.php");
+
+// 1. Obtener el ID del registro desde la URL
+$id = $_GET['id'] ?? 0;
+
+$datosMsj = consultMensajePorId($id);
+
+if (!$datosMsj) {
+    header("Location: admin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,24 +35,27 @@
     <!-- Principal -->
     <main>
         <section class="seccion-admin">
-            <!-- Cuadro contenedor del formulario (idéntico al estilo de admin) -->
+            <!-- Cuadro contenedor del formulario-->
             <div class="contenedor-cuadro-formulario">
                 <h2>Editar Mensaje</h2>
                 
-                <form action="" method="POST">
+                <form action="actualizar_mensajes.php" method="POST">
+                    
+                     <input type="hidden" name="txtid" value="<?php echo $datosMsj['ID']; ?>">
+
                     <div class="grupo-formulario">
                         <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" value="" required>
+                        <input type="text" id="nombre" name="txtnombre" value="<?php echo $datosMsj['nombre']; ?>" required>
                     </div>
 
                     <div class="grupo-formulario">
                         <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" value="" required>
+                        <input type="email" id="correo" name="txtcorreo" value="<?php echo $datosMsj['correo']; ?>" required>
                     </div>
 
                     <div class="grupo-formulario">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <textarea id="mensaje" name="txtmensaje" rows="5" required><?php echo $datosMsj['mensaje']; ?></textarea>
                     </div>
 
                     <button type="submit" class="boton">Actualizar Mensaje</button>
@@ -52,5 +68,6 @@
         <p>&copy; 2026 Mi Portafolio</p>
         <p>Práctica de programación web - Todos los derechos reservados</p>
     </footer>
+    <script src="./js/AlertInsert.js"></script>
 </body>
 </html>

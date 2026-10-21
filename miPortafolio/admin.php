@@ -49,7 +49,7 @@
                           <td>" . $arrMensajes['timeStaps'] . "</td>
                           <td>
                           <a href='editar.php?id=" . $arrMensajes['ID'] . "' title='Editar'>✏️</a>
-                          <a href='borrar.php?id=" . $arrMensajes['ID'] . "' title='Borrar'>🗑️</a>
+                          <a href='borrar.php?id=" . $arrMensajes['ID'] . "' title='Borrar' onclick='return confirm(\"¿Estas seguro de borrar este mensaje?\");'>🗑️</a>
                         </td>
                     </tr>";
                     }?>
@@ -63,5 +63,6 @@
         <p> 2026 Mi portafolio</p>
         <p> Practica de programacion web todos los derechos reservados</p>
     </footer>
+    <script src="./js/AlertInsert.js"></script>
 </body>
 </html>

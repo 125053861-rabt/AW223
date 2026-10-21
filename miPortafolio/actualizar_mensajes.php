@@ -20,9 +20,9 @@ $stmt->bind_param("sssi", $nombre, $correo, $mensaje, $id);
 
 // paso C
 if ($stmt->execute()) {
-    header("Location: admin.php?estadophp=actualizado");
+    header("Location: index.php?estadophp=actualizado");
 } else {
-    header("Location: admin.php?estadophp=fallo");
+    header("Location: index.php?estadophp=fallo");
 }
 
 $stmt->close();
