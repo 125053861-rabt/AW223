@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+lista-estudiantes/.oxlintrc.json
+lista-estudiantes/package-lock.json
+lista-estudiantes/package.json
+lista-estudiantes/public/favicon.svg
+lista-estudiantes/public/icons.svg
+lista-estudiantes/README.md
+lista-estudiantes/src/assets/hero.png
+lista-estudiantes/vite.config.js
+lista-estudiantes/src/assets/react.svg
+lista-estudiantes/src/assets/vite.svg
