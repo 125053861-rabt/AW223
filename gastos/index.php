@@ -66,7 +66,7 @@
                 <td>" . $arrMensajes['fecha'] . "</td>
                 <td>" . $arrMensajes['pagado'] . "</td>
                 <td>
-                <a href='editar.php? title='Editar'>Marcar Pagado</a>
+                <a href='cambiar_estado.php?id=" . $arrMensajes['id'] . "' title='cambiar'>Cambiar Pago</a>
                 </td>
                 </tr>";
             }?>
