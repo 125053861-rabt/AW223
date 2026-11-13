@@ -41,6 +41,37 @@
             <button type="submit">Enviar mensaje</button>
         </div>
       </form>
+
+      <table>
+        <thead>
+        <tr>
+            <td>Concepto</td>
+            <td>Categoria</td>
+            <td>Monto</td>
+            <td>Fecha</td>
+            <td>Estado</td>
+            <td>Accion</td>
+        </tr>
+        </thead>
+        <tbody>
+            <?php
+            require "consulta_mensajes.php";
+            $rsMensaje = consultMensajes();
+
+            while ($arrMensajes = mysqli_fetch_array($rsMensaje)) {
+                echo "<tr>
+                <td>" . $arrMensajes['concepto'] . "</td>
+                <td>" . $arrMensajes['categoria'] . "</td>
+                <td>" . $arrMensajes['monto'] . "</td>
+                <td>" . $arrMensajes['fecha'] . "</td>
+                <td>" . $arrMensajes['pagado'] . "</td>
+                <td>
+                <a href='editar.php? title='Editar'>Marcar Pagado</a>
+                </td>
+                </tr>";
+            }?>
+        </tbody>
+      </table>
     </section>
 </body>
 </html>
