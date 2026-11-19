@@ -41,3 +41,13 @@ proyecto2/configuracion.php
 miPortafolio/actualizar_mensajes.php
 miPortafolio/prueba.php
 miPortafolio/actualizar_mensajes.php
+agencia-viajes/.oxlintrc.json
+agencia-viajes/package-lock.json
+agencia-viajes/package.json
+agencia-viajes/public/favicon.svg
+agencia-viajes/public/icons.svg
+agencia-viajes/README.md
+agencia-viajes/src/assets/hero.png
+agencia-viajes/src/assets/react.svg
+agencia-viajes/src/assets/vite.svg
+agencia-viajes/vite.config.js
