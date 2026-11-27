@@ -1,4 +1,5 @@
-from flask import Blueprint
+from flask import Blueprint,request,jsonify
+from Models.modelEstudiate import *
 
 # BP = BLUEPRINT
 controladorAlumnoBP = Blueprint('controladorAlumno',__name__)
@@ -11,19 +12,55 @@ def inicio():
 # Ruta para insert
 @controladorAlumnoBP.route('/guardarAlumno',methods=['POST'])
 def guardar():
-    return 'Se guardo el alumno'
+    nombreReq =request.form.get('txtNombre','').strip()
+    carreraReq = request.form.get('txtCarrera','').strip()
+
+    try:
+        insertEstudiante(nombreReq,carreraReq)
+        # Mandamos estado 200 para decir que todo esta bien
+        return jsonify({"Completado":"Estudiante Guardado"}),200
+    except Exception as e:
+        return jsonify({"Error":str(e)}),500
 
 # Ruta para consultar
 @controladorAlumnoBP.route('/consultatodo')
 def consultatodo():
-    return '*Imagina que todo se consulto*'
+    try:
+        estudiantes = selectAll()
+        return jsonify(estudiantes), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
 
 # Ruta para actualizar
-@controladorAlumnoBP.route('/actualizarAlumno',methods=['PUT'])
+@controladorAlumnoBP.route('/actualizarAlumno', methods=['PUT'])
 def actualizar():
-    return 'Se actualizo al alumno'
+    idReq = request.form.get('txtId', '').strip()
+    nombreReq = request.form.get('txtNombre', '').strip()
+    carreraReq = request.form.get('txtCarrera', '').strip()
+
+    if not idReq or not nombreReq or not carreraReq:
+        return jsonify({"Error": "Todos los campos son obligatorios"}), 400
+
+    try:
+        actualizarEstudiante(idReq, nombreReq, carreraReq)
+        return jsonify({
+            "Completado": "Estudiante actualizado",
+            "nombre": nombreReq,
+            "carrera": carreraReq
+        }), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
 
 # Ruta para eliminar
-@controladorAlumnoBP.route('/eliminarAlumno',methods=['DELETE'])
+@controladorAlumnoBP.route('/eliminarAlumno', methods=['DELETE'])
 def eliminar():
-    return 'Se elimino el alumno'
+    idReq = request.form.get('txtId', '').strip()
+
+    if not idReq:
+        return jsonify({"Error": "El ID es obligatorio"}), 400
+
+    try:
+        softDeleteEstudiante(idReq)
+        return jsonify({"Completado": "Estudiante eliminado"}), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
